@@ -9,5 +9,5 @@ html,
 body, #root {
   height: 100%;
   width: 100%;
-  background-color: slategrey;
+  background-color: rgb(79, 90, 102);
 }
