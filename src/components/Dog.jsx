@@ -8,8 +8,15 @@ import {
 import { useThree } from "@react-three/fiber";
 import { sample, texture } from "three/tsl";
 import { useEffect } from "react";
+import gsap from "gsap";
+import { useGSAP } from "@gsap/react"
+import { ScrollTrigger } from "gsap/ScrollTrigger";
 
 const Dog = () => {
+
+  gsap.registerPlugin(useGSAP())
+  gsap.registerPlugin(ScrollTrigger)
+
   const model = useGLTF("/models/dog.drc.glb");
 
   useThree(({ camera, gl, scene }) => {
@@ -55,9 +62,9 @@ const Dog = () => {
     <>
       <primitive
         object={model.scene}
-        position={[0.2, -0.72, 0.1]}
+        position={[0.2, -0.58, 0.1]}
         rotation={[0, Math.PI / 4.8, 0]}
-        scale={1.2}
+        scale={1}
       />
       <directionalLight position={[0, 5, 5]} color={0xfff} intensity={10} />
       {/* <OrbitControls /> */}
