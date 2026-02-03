@@ -18,9 +18,9 @@ const App = () => {
         <Dog />
       </Canvas>
 
-      <section className="min-h-screen relative z-10 border border-black" />
-      <section className="min-h-screen relative z-10 border border-black" />
-      <section className="min-h-screen relative z-10 border border-black" />
+      <section id="section-1" className="min-h-screen relative z-10 border border-black" />
+      <section id="section-2" className="min-h-screen relative z-10 border border-black" />
+      <section id="section-3" className="min-h-screen relative z-10 border border-black" />
     </main>
   );
 };

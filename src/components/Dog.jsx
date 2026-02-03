@@ -7,15 +7,14 @@ import {
 } from "@react-three/drei";
 import { useThree } from "@react-three/fiber";
 import { sample, texture } from "three/tsl";
-import { useEffect } from "react";
+import { useEffect, useRef } from "react";
 import gsap from "gsap";
-import { useGSAP } from "@gsap/react"
+import { useGSAP } from "@gsap/react";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 
 const Dog = () => {
-
-  gsap.registerPlugin(useGSAP())
-  gsap.registerPlugin(ScrollTrigger)
+  gsap.registerPlugin(useGSAP());
+  gsap.registerPlugin(ScrollTrigger);
 
   const model = useGLTF("/models/dog.drc.glb");
 
@@ -58,13 +57,54 @@ const Dog = () => {
     } else child.material = brachMaterial;
   });
 
+  const dogModel = useRef(model);
+
+  useGSAP(() => {
+    const tl = gsap.timeline({
+      scrollTrigger: {
+        trigger: "#section-1",
+        endTrigger: "#section-3",
+        start: "top top",
+        end: "bottom bottom",
+        markers: true,
+        scrub: true,
+      },
+    });
+
+    tl.to(dogModel.current.scene.position, {
+      z: "-=0.85",
+      y: "+=0.1",
+    })
+      .to(dogModel.current.scene.rotation, {
+        x: `+=${Math.PI / 15}`,
+        y: `+=${Math.PI / 10}`,
+      })
+      .to(
+        dogModel.current.scene.rotation,
+        {
+          x: `+=${Math.PI / 40}`,
+          y: `-=${Math.PI}`,
+        },
+        "third",
+      )
+      .to(
+        dogModel.current.scene.position,
+        {
+          x: "-=0.6",
+          z: "+=0.6",
+          y: "+=0.01",
+        },
+        "third",
+      );
+  }, []);
+
   return (
     <>
       <primitive
         object={model.scene}
-        position={[0.2, -0.58, 0.1]}
+        position={[0.2, -0.7, 0.05]}
         rotation={[0, Math.PI / 4.8, 0]}
-        scale={1}
+        scale={1.2}
       />
       <directionalLight position={[0, 5, 5]} color={0xfff} intensity={10} />
       {/* <OrbitControls /> */}
