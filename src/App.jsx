@@ -5,6 +5,15 @@ import Textline from "./components/Textline";
 const App = () => {
   return (
     <main className="relative text-white bg-[#15161b]">
+      <div className="images">
+          <img id='tomorrowland' src="/tommorowland.png" alt="" />
+          <img id='navy-pier' src="/navy-pier.png" alt="" />
+          <img id='msi-chicago' src="/msi-chicago.png" alt="" />
+          <img id='phone' src="/phone.png" alt="" />
+          <img id='kikk' src="/kikk.png" alt="" />
+          <img id='kennedy' src="/kennedy.png" alt="" />
+          <img id='opera' src="/opera.png" alt="" />
+        </div>
       <Canvas
         id="canvas"
         style={{
@@ -82,13 +91,13 @@ const App = () => {
       </section>
       <section id="section-2" className="min-h-screen relative z-10">
         <div className="px-14">
-          <Textline line="Tomorrowland" />
-          <Textline line="Navy Pier" />
-          <Textline line="MSI Chicago" />
-          <Textline line="This was Louise's Phone" />
-          <Textline line="KIKK Festival 2018" />
-          <Textline line="The Kennedy Centre" />
-          <Textline line="Royal Opera of Wallonia" />
+          <Textline img="tomorrowland" line="Tomorrowland" />
+          <Textline img="navy-pier" line="Navy Pier" />
+          <Textline img="msi-chicago" line="MSI Chicago" />
+          <Textline img="phone" line="This was Louise's Phone" />
+          <Textline img="kikk" line="KIKK Festival 2018" />
+          <Textline img="kennedy" line="The Kennedy Centre" />
+          <Textline img="opera" line="Royal Opera of Wallonia" />
         </div>
       </section>
       <section id="section-3" className="min-h-screen relative z-10"></section>
