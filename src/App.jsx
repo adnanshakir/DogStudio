@@ -1,10 +1,12 @@
 import { Canvas } from "@react-three/fiber";
 import Dog from "./components/Dog";
+import Textline from "./components/Textline";
 
 const App = () => {
   return (
     <main className="relative text-white bg-[#15161b]">
       <Canvas
+        id="canvas"
         style={{
           height: "100vh",
           width: "100vw",
@@ -12,9 +14,6 @@ const App = () => {
           top: 0,
           left: 0,
           zIndex: 1,
-          backgroundImage: "url(/background-xl.png)",
-          objectPosition: "cover",
-          backgroundRepeat: "no-repeat",
         }}
       >
         <Dog />
@@ -69,15 +68,29 @@ const App = () => {
                 of art, design and technology.
               </p>{" "}
               <p className="font-thin pt-8 pl-32 text-sm text-white/60">
-                Our goal is to deliver amazing experiences that make people <br />
-                talk, and build strategic value for brands, tech, entertainment, <br />
+                Our goal is to deliver amazing experiences that make people{" "}
+                <br />
+                talk, and build strategic value for brands, tech, entertainment,{" "}
+                <br />
                 arts & culture.
               </p>
             </div>
           </div>
         </div>
+        <div className="bg-red-500/60 h-px w-180 rotate-45 absolute top-[60%]"></div>
+        <div className="bg-red-500/60 h-px w-40 -rotate-45 absolute top-[30%] right-50"></div>
       </section>
-      <section id="section-2" className="min-h-screen relative z-10"></section>
+      <section id="section-2" className="min-h-screen relative z-10">
+        <div className="px-14">
+          <Textline line="Tomorrowland" />
+          <Textline line="Navy Pier" />
+          <Textline line="MSI Chicago" />
+          <Textline line="This was Louise's Phone" />
+          <Textline line="KIKK Festival 2018" />
+          <Textline line="The Kennedy Centre" />
+          <Textline line="Royal Opera of Wallonia" />
+        </div>
+      </section>
       <section id="section-3" className="min-h-screen relative z-10"></section>
     </main>
   );
