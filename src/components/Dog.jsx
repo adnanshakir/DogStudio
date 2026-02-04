@@ -66,18 +66,17 @@ const Dog = () => {
         endTrigger: "#section-3",
         start: "top top",
         end: "bottom bottom",
-        markers: true,
         scrub: true,
       },
     });
 
     tl.to(dogModel.current.scene.position, {
-      z: "-=0.85",
+      z: "-=0.75",
       y: "+=0.1",
     })
       .to(dogModel.current.scene.rotation, {
         x: `+=${Math.PI / 15}`,
-        y: `+=${Math.PI / 10}`,
+        y: `+=${Math.PI / 20}`,
       })
       .to(
         dogModel.current.scene.rotation,
@@ -90,9 +89,9 @@ const Dog = () => {
       .to(
         dogModel.current.scene.position,
         {
-          x: "-=0.6",
-          z: "+=0.6",
-          y: "+=0.01",
+          x: "-=0.5",
+          z: "+=0.5",
+          y: "+=0.02",
         },
         "third",
       );
@@ -102,9 +101,9 @@ const Dog = () => {
     <>
       <primitive
         object={model.scene}
-        position={[0.2, -0.7, 0.05]}
-        rotation={[0, Math.PI / 4.8, 0]}
-        scale={1.2}
+        position={[0.2, -0.6, .2]}
+        rotation={[0, Math.PI / 6, 0]}
+        scale={1}
       />
       <directionalLight position={[0, 5, 5]} color={0xfff} intensity={10} />
       {/* <OrbitControls /> */}
